@@ -13,17 +13,48 @@ class BytebankApp extends StatelessWidget {
   }
 }
 
-
 class FormularioTransferencias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Criando Transferencias')),
-      body: Text('Florencio')
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              decoration: InputDecoration(
+                labelText: 'Número da conta',
+                hintText: '0000'
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              decoration: InputDecoration(
+                labelText: 'Valor',
+                hintText: '00.00',
+                icon: Icon(Icons.monetization_on)
+              ),
+              keyboardType: TextInputType.text,
+            ),
+          ),
+          RaisedButton(
+            child: Text('Confirmar'),
+          )
+        ],
+      )
     );
   }
 }
-
 
 class ListaTransferencias extends StatelessWidget{
   @override
